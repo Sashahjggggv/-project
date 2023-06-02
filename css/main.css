@@ -75,6 +75,10 @@ body, * {
   transition: all 0.2s ease;
 }
 
+body {
+  background: #D0D8DB;
+}
+
 .container {
   width: calc(100% - 200px);
   margin: 0 auto;
@@ -109,7 +113,7 @@ body, * {
   margin-right: 5px;
 }
 .header__social-link:hover {
-  transform: scale(1.1);
+  transform: rotate(360deg);
 }
 
 .first__container {
@@ -149,8 +153,9 @@ body, * {
 }
 .first__block-image {
   width: 50%;
-  height: 100%;
-  background: url(img/first-image.jpg) repeat 0 0;
+  min-height: 100%;
+  border-radius: 20px;
+  background: url("../img/first-image.jpg") 0 0/auto 100% no-repeat;
 }
 
 .second__container {
@@ -189,9 +194,10 @@ body, * {
   transform: scale(0.9);
 }
 .second__block-image {
-  width: 30%;
-  height: 100%;
-  background: url(img/first-image.jpg) repeat 0 0;
+  width: 50%;
+  min-height: 100%;
+  border-radius: 20px;
+  background: url("../img/first-image.jpg") 0 0/auto 100% no-repeat;
 }
 
 .thirt__container {
@@ -230,9 +236,10 @@ body, * {
   transform: scale(0.9);
 }
 .thirt__block-image {
-  width: 30%;
-  height: 100%;
-  background: url(img/first-image.jpg) repeat 0 0;
+  width: 50%;
+  min-height: 100%;
+  border-radius: 20px;
+  background: url("../img/first-image.jpg") 0 0/auto 100% no-repeat;
 }
 
 .gallery__title {
@@ -242,18 +249,27 @@ body, * {
 }
 .gallery__photos {
   display: flex;
+  border-radius: 20px;
+  overflow: hidden;
 }
 .gallery__img {
   height: 200px;
 }
-.gallery__img:first-child, .gallery__img:nth-child(2) {
+.gallery__img:first-child {
   width: 28%;
+  background: url("../img/first-image.jpg") 0 0/auto 100% no-repeat;
+}
+.gallery__img:nth-child(2) {
+  width: 28%;
+  background: url("../img/first-image.jpg") 0 0/auto 100% no-repeat;
 }
 .gallery__img:nth-child(3) {
   width: 15%;
+  background: url("../img/first-image.jpg") 0 0/auto 100% no-repeat;
 }
 .gallery__img:last-child {
   width: 29%;
+  background: url("../img/first-image.jpg") 0 0/auto 100% no-repeat;
 }
 
 .features__title {
@@ -353,4 +369,109 @@ body, * {
 }
 .form__btn-send:active {
   transform: scale(0.9);
+}
+
+.footer {
+  margin-top: 40px;
+  border-top: 1px solid #000;
+}
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__socials {
+  margin: 10px 0;
+  display: flex;
+}
+.footer__socail-link {
+  transition: all 0.5 ease;
+  width: 60px;
+  height: 60px;
+  border: 2px solid orange;
+  background: orange;
+  margin-left: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer__socail-link:hover img {
+  transform: rotate(360deg);
+}
+.footer__socail-link:hover {
+  background: none;
+}
+.footer__link img {
+  width: 50px;
+  height: 50px;
+}
+.footer__text {
+  font-size: 18px;
+}
+
+@media (max-width: 850px) {
+  .container {
+    width: calc(100% - 50px);
+  }
+  .header__socials {
+    display: none;
+  }
+  .header__logo {
+    font-size: 18px;
+    margin-right: 15px;
+  }
+  .header__link {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  .first, .second, .thirt {
+    margin-bottom: 20px;
+  }
+  .first__content, .second__content, .thirt__content {
+    padding: 20px 0;
+  }
+  .first__container, .second__container, .thirt__container {
+    flex-direction: column;
+  }
+  .first__block-text, .second__block-text, .thirt__block-text {
+    width: 100%;
+    height: auto;
+  }
+  .first__block-image, .second__block-image, .thirt__block-image {
+    width: 100%;
+    height: 400px;
+  }
+  .first__container {
+    flex-direction: column-reverse;
+  }
+  .gallery__img {
+    height: 200px;
+  }
+  .gallery__img:first-child {
+    width: 50%;
+    background: url("../img/first-image.jpg") 0 0/auto 100% no-repeat;
+  }
+  .gallery__img:nth-child(2) {
+    width: 50%;
+    background: url("../img/first-image.jpg") 0 0/auto 100% no-repeat;
+  }
+  .gallery__img:nth-child(3) {
+    display: none;
+  }
+  .gallery__img:last-child {
+    display: none;
+  }
+  .form__line {
+    flex-direction: column;
+  }
+  .form__input-group {
+    margin-bottom: 20px;
+  }
+  .form__radio-btns {
+    flex-direction: column;
+  }
+  .form__block-radio-btn {
+    margin-bottom: 10px;
+  }
 }
